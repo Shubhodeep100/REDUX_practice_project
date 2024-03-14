@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Button, Card } from "react-bootstrap";
 function Test() {
   const [products, getProducts] = useState([]);
 
@@ -7,15 +8,38 @@ function Test() {
     // API call
 
     fetch("https://fakestoreapi.com/products")
-      .then(data => data.json())
-      .then(result => {
+      .then((data) => data.json())
+      .then((result) => {
         getProducts(result);
       });
-  },[]);
+  }, []);
 
+  const cards = products.map((product) => (
+    <div className="col-md-3" style={{ marginBottom: "10px" }}>
+      <Card key={product.id} className="h-100">
+        <div className="text-center">
+          <Card.Img
+            variant="top"
+            src={product.image}
+            style={{ width: "100px", height: "130px" }}
+          />
+        </div>
+        <Card.Body>
+          <Card.Title>{product.title}</Card.Title>
+          <Card.Text> INR: {product.price}</Card.Text>
+          <Card.Text>{product.category}</Card.Text>
+        </Card.Body>
+
+        <Card.Footer style={{ background: "white" }}>
+          <Button variant="primary">Add to cart</Button>
+        </Card.Footer>
+      </Card>
+    </div>
+  ));
   return (
     <>
       <h1>This is my Product.</h1>
+      <div className="row">{cards}</div>
     </>
   );
 }
