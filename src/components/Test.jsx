@@ -21,13 +21,16 @@ function Test() {
           <Card.Img
             variant="top"
             src={product.image}
-            style={{ width: "100px", height: "130px", paddingTop:'10px' }}
+            style={{ width: "100px", height: "130px", paddingTop: "10px" }}
           />
         </div>
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
           <Card.Text> INR: {product.price}</Card.Text>
-          <Card.Text>{product.category}</Card.Text>
+          <Card.Text>
+            <span style={{ fontWeight: "bold" }}>Category:</span>{" "}
+            <span style={{fontStyle:'oblique'}}>{product.category}</span>
+          </Card.Text>
         </Card.Body>
 
         <Card.Footer style={{ background: "white" }}>
