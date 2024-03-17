@@ -33,7 +33,7 @@ function Test() {
           </Card.Text>
         </Card.Body>
 
-        <Card.Footer style={{ background: "white" }}>
+        <Card.Footer style={{ background: "slate" }}>
           <Button variant="primary">Add to cart</Button>
         </Card.Footer>
       </Card>
