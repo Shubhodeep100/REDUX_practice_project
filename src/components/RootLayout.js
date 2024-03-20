@@ -9,10 +9,11 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 
 
-function RootLayout() {
+const RootLayout = () => {
   return (
     <>
       <NavBar />
+      {/* <h1>Navigation</h1> */}
       <main>
         <Outlet />
       </main>
