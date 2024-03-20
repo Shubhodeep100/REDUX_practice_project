@@ -29,7 +29,7 @@ function Test() {
           <Card.Text> INR: {product.price}</Card.Text>
           <Card.Text>
             <span style={{ fontWeight: "bold" }}>Category:</span>{" "}
-            <span style={{fontStyle:'oblique'}}>{product.category}</span>
+            <span style={{ fontStyle: "oblique" }}>{product.category}</span>
           </Card.Text>
         </Card.Body>
 
@@ -41,7 +41,7 @@ function Test() {
   ));
   return (
     <>
-      <h1>This is my Product.</h1>
+      <h2>This is my Product Gallery.</h2>
       <div className="row">{cards}</div>
     </>
   );

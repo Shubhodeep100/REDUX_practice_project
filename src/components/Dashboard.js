@@ -1,7 +1,9 @@
+import Test from "./Test";
+
 const Dashboard = () =>  {
   return (
     <div>
-      <h2>Dashboard</h2>
+      <Test/>
     </div>
   )
 }
