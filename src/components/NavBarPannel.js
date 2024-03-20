@@ -19,6 +19,7 @@ function NavBar() {
               Products
             </Nav.Link>
           </Nav>
+          <Navbar.Toggle/>
         </Navbar.Collapse>
       </Container>
     </Navbar>
