@@ -20,7 +20,7 @@ function NavBar() {
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             <Nav.Link to="/cart" as={Link}>
-              My Bag 0
+              My Bag {cartProducts.length}
             </Nav.Link>
           </Navbar.Text>
         </Navbar.Collapse>
