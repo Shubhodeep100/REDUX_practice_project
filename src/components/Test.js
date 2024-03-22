@@ -19,7 +19,7 @@ function Test() {
 
   const addToCart = (product) => {
     // Dispatch an 'add' action
-    dispatch(add);
+    dispatch(add(product));
   };
 
   const cards = products.map((product) => (
