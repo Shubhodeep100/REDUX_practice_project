@@ -3,7 +3,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { UseSelector, useSelector } from "react-redux";
 function NavBar() {
+  const cartProducts = useSelector((state) => state.cart);
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -21,7 +24,6 @@ function NavBar() {
             </Nav.Link>
           </Navbar.Text>
         </Navbar.Collapse>
-
       </Container>
     </Navbar>
   );
