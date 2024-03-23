@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
   data: [],
+  status:'idle'
 };
 
 const productSlice = createSlice({
@@ -13,8 +14,16 @@ const productSlice = createSlice({
     // },
   },
   extraReducers: (builder) => {
-    builder.addCase(getProducts.fulfilled, (state, action) => {
+    builder
+    .addCase(getProducts.pending, (state, action) => {
+      state.status = 'Loading';
+    })
+    .addCase(getProducts.fulfilled, (state, action) => {
       state.data = action.payload;
+         state.status = "idle";
+    })
+    .addCase(getProducts.rejected, (state, action) => {
+         state.status = "error";
     });
   },
 });
