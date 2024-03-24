@@ -9,9 +9,7 @@ const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    // fetchProducts(state, action) {
-    //   state.data = action.payload;
-    // },
+   
   },
   extraReducers: (builder) => {
     builder
@@ -36,11 +34,3 @@ export const getProducts = createAsyncThunk("products/get", async () => {
   const result = await data.json();
   return result;
 });
-
-// export function getProducts() {
-//   return async function getProductsThunk(dispatch, getState) {
-//     const data = await fetch("https://fakestoreapi.com/products");
-//     const result = await data.json();
-//     dispatch(fetchProducts(result));
-//   };
-// }

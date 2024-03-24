@@ -6,9 +6,8 @@ import { add } from "../store/cartSlice";
 import { getProducts } from "../store/productSlice";
 
 function Test() {
-
   const dispatch = useDispatch();
-  const { data: products } = useSelector(state => state.products);
+  const { data: products } = useSelector((state) => state.products);
 
   useEffect(() => {
     // API call
@@ -21,12 +20,17 @@ function Test() {
     //   });
   }, []);
 
+  // eslint-disable-next-line no-restricted-globals
+  if (status === "Loading") {
+    return <p>loading...</p>;
+  }
+
   const addToCart = (product) => {
     // Dispatch an 'add' action
     dispatch(add(product));
   };
 
-  const cards = products.map(product => (
+  const cards = products.map((product) => (
     <div className="col-md-3" style={{ marginBottom: "10px" }}>
       <Card key={product.id} className="h-100 text-center">
         <div className="text-center">
