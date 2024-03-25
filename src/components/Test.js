@@ -13,11 +13,7 @@ function Test() {
     // API call
     // dispatch an action for fetching products
     dispatch(getProducts());
-    // fetch("https://fakestoreapi.com/products")
-    //   .then((data) => data.json())
-    //   .then((result) => {
-    //     getProducts(result);
-    //   });
+   
   }, []);
 
   // eslint-disable-next-line no-restricted-globals
